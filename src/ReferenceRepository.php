@@ -198,8 +198,6 @@ class ReferenceRepository
     /**
      * Loads an object using stored reference named by $name
      *
-     * @template T of object
-     *
      * @param string $name
      * @psalm-param class-string<T>|null $class
      *
@@ -207,6 +205,8 @@ class ReferenceRepository
      * @psalm-return ($class is null ? object : T)
      *
      * @throws OutOfBoundsException - if repository does not exist.
+     *
+     * @template T of object
      */
     public function getReference($name, ?string $class = null)
     {
